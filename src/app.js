@@ -18,17 +18,17 @@ hbs.registerPartials("views/partials");
 
 app.get("/",async (req,res) => {
     const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"});
-    const teachers = await teacher.find();
+     const teachers = await teacher.find();
     res.render("index",{
-        details:details,
-        teachers:teachers
+         details:details,
+         teachers:teachers
     })
 
 });
 
 
 app.get("/register",async(req,res) => {
-    const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
+     const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
     res.render("register",{
         details:details
     })
@@ -43,9 +43,9 @@ app.get("/contact/:id", async (req,res) => {
     })
 });
 
-mongoose.connect("mongodb://localhost/thestudyplus",() =>{
+ mongoose.connect("mongodb://localhost/thestudyplus",() =>{
     console.log("db connected");
-    // teacher.create({
+   // teacher.create({
     //     name:"Horil Prasad",
     //     imageUrl:"https://www.careergirls.org/wp-content/uploads/2018/05/Teacher_1920x1080.jpg",
     //     qualification:"MCA",
@@ -60,7 +60,7 @@ mongoose.connect("mongodb://localhost/thestudyplus",() =>{
     // detail.create({
     //     brandIconUrl:"/static/images/logo.png"
     // })
-});
+   });
 app.post("/contact/:id",async(req,res) =>{
 
 });
@@ -85,7 +85,7 @@ app.post("/register",async (req,res)=>{
                 gender:req.body.gender,
                 dob:req.body.dob
             })
-            
+           
 
  } catch (error) {
      res.status(400).send(error);

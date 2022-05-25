@@ -20,7 +20,7 @@ async function main() {
     to: "judethms98@gmail.com", // list of receivers
     subject: "Hello ✔", // Subject line
     text: "Hello world?", // plain text body
-    html: "<h1>Hello world? this is testing</h1>", // html body
+    html: "<h1>Testing </h1>", // html body
   });
 
   console.log("Message sent: %s", info.messageId);
