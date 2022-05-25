@@ -33,6 +33,7 @@ app.get("/register",async(req,res) => {
         details:details
     })
 });
+
 app.get("/contact/:id", async (req,res) => {
     const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
     const data = await teacher.findOne({"_id":req.params.id});
@@ -93,6 +94,6 @@ app.post("/register",async (req,res)=>{
  return res.redirect('/');
 });
 
-app.listen(process.env.PORT | 3000,()=>{
+app.listen(process.env.PORT | 8080,()=>{
     console.log("server started");
 });
