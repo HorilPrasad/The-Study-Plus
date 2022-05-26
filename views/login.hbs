@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .active-admin {
+            color: white !important;
+            background-color: #198754 !important;
+            border-radius: 5px;
+        }
+    </style>
+    {{>bootstraphead}}
+    <title>Admin Login</title>
+</head>
+
+<body>
+
+    {{>navbar data=details}}
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="/static/images/avatar.jpg" alt="Avatar">
+            </div>
+
+            <div class="fadeIn second">
+                <h3>Admin</h3>
+            </div>
+
+            <!-- Login Form -->
+            <form action="" method="post">
+                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+    {{>footer}}
+    {{>bootstrapbottom}}
+</body>
+
+</html>

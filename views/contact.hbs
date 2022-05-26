@@ -6,118 +6,111 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/contact.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  {{>bootstraphead}}
   <title>Contact</title>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand logo" href="/"><img src={{details.brandIconUrl}} alt="" height="50px" width="110px"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Home</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="/"><img src={{details.brandIconUrl}} alt="" height="50px" width="110px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
 
-              <a href="/register" class="btn btn-regiter">Register</a>
-            </form>
-          </div>
-        </div>
-      </nav>
+          <a href="/register" class="btn btn-regiter">Register</a>
+          <a href="/login" class="btn btn-regiter">Admin</a>
+        </form>
+      </div>
+    </div>
+  </nav>
   <div class="container">
-  <div class="card col-md-5">
-    <img class="card-img-top"
-      src={{data.imageUrl}} alt="Card image cap">
-    <div class="card-body">
-      <h1 class="card-heading">{{data.name}}</h1>
-      <p class="card-text">{{data.qualification}} | {{data.from}}</p>
-      <ul class="card-list">
-            <h5>Experts</h5>
-            {{#each data.expertise}}
-            <li>{{this.subject}}</li>
-            {{/each}}
-          </ul>
+    <div class="card col-md-5">
+      <img class="card-img-top" src={{data.imageUrl}} alt="Card image cap">
+      <div class="card-body">
+        <h1 class="card-heading">{{data.name}}</h1>
+        <p class="card-text">{{data.qualification}} | {{data.from}}</p>
+        <ul class="card-list">
+          <h5>Experts</h5>
+          {{#each data.expertise}}
+          <li>{{this.subject}}</li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="contain col-md-7">
-    <div class="title" name="title">Contact</div>
-    <div class="content">
-      <form action="/contact/{{data._id}}" method="post">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name<span class="star">*</span></span>
-            <input type="text" placeholder="Enter your name" name="name" required>
+    <div class="contact-form col-md-7">
+      <div class="title" name="title">Contact</div>
+      <div class="content">
+        <form action="/contact/{{data._id}}" method="post">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name<span class="star">*</span></span>
+              <input type="text" placeholder="Enter your name" name="name" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Email<span class="star">*</span></span>
+              <input type="email" placeholder="Enter your email" name="email" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number<span class="star">*</span></span>
+              <input type="number" placeholder="Enter your number" name="phoneNumber" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Qalification<span class="star">*</span></span>
+              <input type="text" placeholder="Enter your qualification" name="qualification" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Address<span class="star">*</span></span>
+              <input type="text" placeholder="Eneter your address" name="address" required>
+            </div>
+            <div class="input-box">
+              <span class="details">What you want learn<span class="star">*</span></span>
+              <input type="text" placeholder="Eneter your message" name="message" required>
+            </div>
           </div>
-          <div class="input-box">
-            <span class="details">Email<span class="star">*</span></span>
-            <input type="email" placeholder="Enter your email" name="email" required>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" value="male">
+            <input type="radio" name="gender" id="dot-2" value="female">
+            <input type="radio" name="gender" id="dot-3" value="other">
+            <span class="gender-title">Gender<span class="star">*</span></span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
           </div>
-          <div class="input-box">
-            <span class="details">Phone Number<span class="star">*</span></span>
-            <input type="number" placeholder="Enter your number" name="phoneNumber" required>
+          <div class="button">
+            <input type="submit" value="Sent Message">
           </div>
-          <div class="input-box">
-            <span class="details">Qalification<span class="star">*</span></span>
-            <input type="text" placeholder="Enter your qualification" name="qualification" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Address<span class="star">*</span></span>
-            <input type="text" placeholder="Eneter your address" name="address" required>
-          </div>
-          <div class="input-box">
-            <span class="details">What you want learn<span class="star">*</span></span>
-            <input type="text" placeholder="Eneter your message" name="message" required>
-          </div>
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1" value="male">
-          <input type="radio" name="gender" id="dot-2" value="female">
-          <input type="radio" name="gender" id="dot-3" value="other">
-          <span class="gender-title">Gender<span class="star">*</span></span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Male</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Female</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" value="Sent Message">
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
 
   </div>
 
   {{>footer}}
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-
+  {{>bootstrapbottom}}
 </body>
 
 </html>

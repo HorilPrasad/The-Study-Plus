@@ -43,6 +43,16 @@ app.get("/contact/:id", async (req,res) => {
     })
 });
 
+
+
+
+app.get("/admin", async (req,res) => {
+    const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
+    res.render("login",{
+        details:details
+    });
+});
+
  mongoose.connect("mongodb://localhost/thestudyplus",() =>{
     console.log("db connected");
    // teacher.create({

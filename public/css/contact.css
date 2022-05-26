@@ -15,8 +15,11 @@
 }
 .card{
     height: 90vh;
-    margin: 10px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    background-color: #fff;
+    margin-right: 10px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 .card .card-img-top{
     height: 300px;
@@ -36,8 +39,8 @@
 .card .card-list{
     margin-left: auto;
 }
-.contain{
-   height: 90vh;
+.contact-form{
+  height: 90vh;
   margin-right: 10px;
   background-color: #fff;
   padding: 25px 30px;
