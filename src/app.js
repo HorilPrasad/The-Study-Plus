@@ -4,7 +4,9 @@ const hbs = require("hbs");
 const app = express();
 const detail = require("./models/details");
 const teacher = require("./models/teachers");
+const pendingteacher = require("./models/pendingteachers");
 const async = require("hbs/lib/async");
+const {sentmailTeacher, sendmailStudent} = require("./mail/mailer");
 
 
 app.use('/static',express.static("public"));
@@ -41,6 +43,8 @@ app.get("/contact/:id", async (req,res) => {
         data:data,
         details:details
     })
+
+
 });
 
 
@@ -72,13 +76,31 @@ app.get("/admin", async (req,res) => {
     // })
    });
 app.post("/contact/:id",async(req,res) =>{
-
+    const data = await teacher.findOne({"_id":req.params.id});
+    let obj = {
+        name:data.name,
+        email:data.email,
+        phone:data.phoneNumber,
+        qualification:data.qualification
+    }
+    let student = {
+        name:req.body.name,
+        email:req.body.email,
+        phone:req.body.phoneNumber,
+        qualification:req.body.qualification,
+        address:req.body.address,
+        gender:req.body.gender,
+        message:req.body.message
+    }
+    sendmailStudent(req.body.email,obj);
+    sentmailTeacher(data.email,student);
+   return  res.redirect("/");
 });
 
 
 app.post("/register",async (req,res)=>{
  try {
-     teacher.create({
+     pendingteacher.create({
                 name:req.body.name,
                 imageUrl:req.body.imageUrl,
                 qualification:req.body.qualification,
