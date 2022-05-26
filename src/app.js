@@ -58,19 +58,6 @@ app.get("/admin", async (req,res) => {
 });
 
  mongoose.connect("mongodb://localhost/thestudyplus",() =>{
-    console.log("db connected");
-   // teacher.create({
-    //     name:"Horil Prasad",
-    //     imageUrl:"https://www.careergirls.org/wp-content/uploads/2018/05/Teacher_1920x1080.jpg",
-    //     qualification:"MCA",
-    //     from:"NIT Allahabad",
-    //     expertise:[
-    //         {subject:"12th math"},
-    //         {subject:"Android Development"},
-    //         {subject:"Web Development"},
-    //         {subject:"NodeJS, Express, MongoDB"}
-    //     ]   
-    // })
     // detail.create({
     //     brandIconUrl:"/static/images/logo.png"
     // })
@@ -100,7 +87,7 @@ app.post("/contact/:id",async(req,res) =>{
 
 app.post("/register",async (req,res)=>{
  try {
-     pendingteacher.create({
+     teacher.create({
                 name:req.body.name,
                 imageUrl:req.body.imageUrl,
                 qualification:req.body.qualification,
