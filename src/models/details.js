@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+
+//website home page schema
 const details = mongoose.Schema({
     brandIconUrl:String,
     heroHeading:String,
