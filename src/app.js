@@ -7,9 +7,13 @@ const teacher = require("./models/teachers");
 const pendingteacher = require("./models/pendingteachers");
 const async = require("hbs/lib/async");
 const {sentmailTeacher, sendmailStudent} = require("./mail/mailer");
+const admin = require("./models/admin");
+
+
 
 // use public folder as static
 app.use('/static',express.static("public"));
+
 
 
 // use json for data parser
