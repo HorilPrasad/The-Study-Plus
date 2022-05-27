@@ -8,14 +8,14 @@ async function sendmailStudent(to,obj) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'horilraj@gmail.com', // user
-      pass: '99Horil raj', // password
+      user: 'thestudyplus04@gmail.com', // user
+      pass: 'thestudyplus', // password
     }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'horilraj@gmail.com', // sender address
+    from: 'thestudyplus04@gmail.com', // sender address
     to: to, // list of receivers
     subject: 'The Study Plus Provide Best Teacher From all Over Worlds!', // Subject line
     text: "",
@@ -47,14 +47,14 @@ async function sentmailTeacher(to,obj) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'horilraj@gmail.com', // user
-      pass: '99Horil raj', // password
+      user: 'thestudyplus04@gmail.com', // user
+      pass: 'thestudyplus', // password
     }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'horilraj@gmail.com', // sender address
+    from: 'thestudyplus04@gmail.com', // sender address
     to: to, // list of receivers
     subject: 'The Study Plus Provide Best Teacher From all Over Worlds!', // Subject line
     text: "",
