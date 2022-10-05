@@ -62,10 +62,8 @@ app.get("/admin", async (req,res) => {
 });
 
 // mongodb connection
- mongoose.connect("mongodb://localhost/thestudyplus",() =>{
-    // detail.create({
-    //     brandIconUrl:"/static/images/logo.png"
-    // })
+ mongoose.connect(process.env.DB_CONN,() =>{
+        console.log('DB connected')
    });
 
 app.post("/contact/:id",async(req,res) =>{
