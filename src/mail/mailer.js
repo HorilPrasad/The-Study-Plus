@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-
+require('dotenv').config();
 // async..await is not allowed in global scope, must use a wrapper
 async function sendmailStudent(to,obj) {
  
@@ -8,14 +8,14 @@ async function sendmailStudent(to,obj) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'thestudyplus04@gmail.com', // user
-      pass: 'thestudyplus', // password
+      user: process.env.mailID, // user
+      pass: process.env.mailPassword // password
     }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'thestudyplus04@gmail.com', // sender address
+    from: process.env.mailID, // sender address
     to: to, // list of receivers
     subject: 'The Study Plus Provide Best Teacher From all Over Worlds!', // Subject line
     text: "",
@@ -38,7 +38,7 @@ async function sendmailStudent(to,obj) {
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-sendmailStudent().catch(console.error);
+// sendmailStudent().catch(console.error);
 // async..await is not allowed in global scope, must use a wrapper
 async function sentmailTeacher(to,obj) {
  
@@ -47,14 +47,14 @@ async function sentmailTeacher(to,obj) {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'thestudyplus04@gmail.com', // user
-      pass: 'thestudyplus', // password
+      user: process.env.mailID, // user
+      pass: process.env.mailPassword // password
     }
   });
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: 'thestudyplus04@gmail.com', // sender address
+    from: process.env.mailID, // sender address
     to: to, // list of receivers
     subject: 'The Study Plus Provide Best Teacher From all Over Worlds!', // Subject line
     text: "",
@@ -79,6 +79,6 @@ async function sentmailTeacher(to,obj) {
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
-sentmailTeacher().catch(console.error);
+// sentmailTeacher().catch(console.error);
 
 module.exports = {sentmailTeacher,sendmailStudent};

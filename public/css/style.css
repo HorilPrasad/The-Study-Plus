@@ -63,11 +63,11 @@
   color: black !important;
 }
 #hero h2{
-  padding: 0px 80px;
+  padding: 0px 50px;
 }
 #hero p{
     padding: 10px 50px;
-    font-weight: 400;
+    font-weight: 500;
 }
 @media (max-width:967px){
     #hero p{

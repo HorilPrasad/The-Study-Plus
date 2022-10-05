@@ -8,7 +8,7 @@ const pendingteacher = require("./models/pendingteachers");
 const async = require("hbs/lib/async");
 const {sentmailTeacher, sendmailStudent} = require("./mail/mailer");
 const admin = require("./models/admin");
-
+require('dotenv').config();
 
 
 // use public folder as static
@@ -27,7 +27,7 @@ hbs.registerPartials("views/partials");
 
 // redirect home page
 app.get("/",async (req,res) => {
-    const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"});
+    const details = await detail.findOne({"_id":"630b378829fb0b9c05029c32"});
      const teachers = await teacher.find();
     res.render("index",{
          details:details,
@@ -36,16 +36,15 @@ app.get("/",async (req,res) => {
 
 });
 
-
 app.get("/register",async(req,res) => {
-     const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
+     const details = await detail.findOne({"_id":"630b378829fb0b9c05029c32"});
     res.render("register",{
         details:details
     })
 });
 
 app.get("/contact/:id", async (req,res) => {
-    const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
+    const details = await detail.findOne({"_id":"630b378829fb0b9c05029c32"});
     const data = await teacher.findOne({"_id":req.params.id});
     res.render("contact",{
         data:data,
@@ -59,7 +58,7 @@ app.get("/contact/:id", async (req,res) => {
 
 
 app.get("/admin", async (req,res) => {
-    const details = await detail.findOne({"_id":"628bb2081104845f9dc95da9"})
+    const details = await detail.findOne({"_id":"630b378829fb0b9c05029c32"})
     res.render("login",{
         details:details
     });
@@ -125,6 +124,6 @@ app.post("/register",async (req,res)=>{
 });
 
 // server setup
-app.listen(process.env.PORT | 8080,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("server started");
 });

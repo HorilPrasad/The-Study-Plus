@@ -6,6 +6,7 @@
     font-family: "Poppins", sans-serif;
   }
   
+
   a {
     color: #92badd;
     display:inline-block;
@@ -217,4 +218,12 @@
   *:focus {
       outline: none;
   }
-  
+  /* extra css for nav */
+  .active-admin {
+    color: white !important;
+    background-color: #198754 !important;
+    border-radius: 5px;
+}
+.hide-teacher{
+    display: none !important;
+}
