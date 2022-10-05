@@ -7,17 +7,10 @@ const teacher = require("./models/teachers");
 const pendingteacher = require("./models/pendingteachers");
 const async = require("hbs/lib/async");
 const {sentmailTeacher, sendmailStudent} = require("./mail/mailer");
-<<<<<<< HEAD
 const admin = require("./models/admin");
 require('dotenv').config();
 
-
-// use public folder as static
-=======
-const admin=require("./models/admin");
-
 //use public folder as static path
->>>>>>> 6e89cfeb47c5002f56e343dd38c237c588d4ba12
 app.use('/static',express.static("public"));
 
 // use json for data parser
