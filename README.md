@@ -1,6 +1,6 @@
 # The-Study-Plus
 Build at DevJam
-![94318669_552520908801949_2831179537432182784_n](https://user-images.githubusercontent.com/96302661/170649118-725b4d58-9558-4204-a5dc-0174d7ffdea5.png)
+<img src="https://user-images.githubusercontent.com/96302661/170649118-725b4d58-9558-4204-a5dc-0174d7ffdea5.png" height = "400px" width = "400px">
 
 # Introduction
 ## Idea / Problem
@@ -41,4 +41,4 @@ https://docs.google.com/presentation/d/1aTNSp-L4lvRGKG1gkTiJrPa8Vxkue8HY/edit?us
 * Jude Thomas
 * Harnarayan Pateriya
 
-![94318669_552520908801949_2831179537432182784_n](https://user-images.githubusercontent.com/96302661/170649131-020c565c-a1cc-4eea-9db8-d205bd9ee746.png)
+<img src="https://user-images.githubusercontent.com/96302661/170649118-725b4d58-9558-4204-a5dc-0174d7ffdea5.png" height = "400px" width = "400px">
